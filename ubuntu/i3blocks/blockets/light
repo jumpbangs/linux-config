@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Left click
+if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
+	light -U 5
+# Right click
+elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
+	light -A 5
+fi
+
+echo "$(printf "%.0f" "$(light)")%"

@@ -1,0 +1,345 @@
+#    _ _____                     _____      
+#   (_)__  /   _________  ____  / __(_)___ _
+#  / / /_ <   / ___/ __ \/ __ \/ /_/ / __ `/
+# / /___/ /  / /__/ /_/ / / / / __/ / /_/ / 
+#/_//____/   \___/\____/_/ /_/_/ /_/\__, /  
+#                                  /____/  
+
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Keybindings
+set $mod Mod4
+set $alt Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:menlo 9
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+font pango:Menlo 8
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# kill focused window
+#bindsym $mod+Shift+q kill
+bindsym $alt+Shift+q kill
+
+# start dmenu (a program launcher)
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+l focus up
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Up focus up
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# _       __           __                                                  _____      
+#| |     / /___  _____/ /___________  ____ _________     _________  ____  / __(_)___ _
+#| | /| / / __ \/ ___/ //_/ ___/ __ \/ __ `/ ___/ _ \   / ___/ __ \/ __ \/ /_/ / __ `/
+#| |/ |/ / /_/ / /  / ,< (__  ) /_/ / /_/ / /__/  __/  / /__/ /_/ / / / / __/ / /_/ / 
+#|__/|__/\____/_/  /_/|_/____/ .___/\__,_/\___/\___/   \___/\____/_/ /_/_/ /_/\__, /  
+#                           /_/                                              /____/   
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 " 1  "
+set $ws2 " 2  "
+set $ws3 " 3  "
+set $ws4 " 4  "
+set $ws5 " 5  "
+set $ws6 " 6  "
+set $ws7 " 7  "
+set $ws8 " 8  "
+set $ws9 " 9  "
+set $ws10 " 10  "
+set $ws11 " 11  "
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym Ctrl+Shift+1 workspace number $ws11
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+Ctrl+1 move container to workspace number $ws11
+
+# Display Setting for each workspace
+workspace 1 output LVDS-0
+workspace 2 output VGA-0
+workspace 3 output LVDS-0
+workspace 4 output VGA-0
+workspace 5 output LVDS-0
+workspace 6 output VGA-0
+workspace 7 output LVDS-0
+workspace 8 output VGA-0
+workspace 9 output LVDS-0
+workspace 10 output VGA-0
+workspace 11 output VGA-0
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# Resize window
+bindsym $mod+r mode "resize"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+#    _ _____    __  __                      
+#   (_)__  /   / /_/ /_  ___  ____ ___  ___ 
+#  / / /_ <   / __/ __ \/ _ \/ __ `__ \/ _ \
+# / /___/ /  / /_/ / / /  __/ / / / / /  __/
+#/_//____/   \__/_/ /_/\___/_/ /_/ /_/\___/ 
+                                           
+# Colours (Ayu-dark)
+#set $color_base03   #0a0e14
+#set $color_base02   #1f2430
+#set $color_base01   #b3b1ad
+#set $color_base00   #b3b1ad
+#set $color_base0    #e6e1cf
+#set $color_base1    #e6e1cf
+#set $color_base2    #ffffff
+#set $color_base3    #ffffff
+#set $color_yellow   #ffd580
+#set $color_orange   #e6b450
+#set $color_red      #ff3333
+#set $color_magenta  #f28779
+#set $color_violet   #B48EAD
+#set $color_blue     #73d0ff
+#set $color_cyan     #95e6cb
+#set $color_green    #bae67e
+
+# Colours (Gurvbox)
+set $color_base03   #282828
+set $color_base02   #3c3836
+set $color_base01   #504945
+set $color_base00   #665c54
+set $color_base0    #a89984
+set $color_base1    #bdae93
+set $color_base2    #d5c4a1
+set $color_base3    #ebdbb2
+set $color_yellow   #d79921
+set $color_orange   #d65d0e
+set $color_red      #cc241d
+set $color_magenta  #d3869b
+set $color_violet   #b16286
+set $color_blue     #458588
+set $color_cyan     #689d6a
+set $color_green    #98971a
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+	status_command i3blocks
+
+    colors {
+        background $color_base03
+        separator  $color_blue
+        statusline $color_base1
+
+        # State             Border  		BG				Text
+        focused_workspace   $color_base02 	$color_base02  	$color_base2
+        active_workspace    $color_base02 	$color_base02 	$color_base00
+        inactive_workspace  $color_base03 	$color_base03 	$color_base00
+        urgent_workspace    $color_red		$color_red 		$color_base3
+        binding_mode        $color_base00 	$color_green 	$color_base00
+    }
+}
+
+# Property Name         Border  	  BG      	    Text    	 	Indicator 	 Child Border
+client.focused          $color_base03 $color_base01 $color_base03  $color_blue   $color_base01
+client.focused_inactive $color_base03 $color_base02 $color_base0   $color_base02 $color_base03
+client.unfocused        $color_base03 $color_base02 $color_base0   $color_base02 $color_base03
+client.urgent           $color_base03 $color_red 	$color_base3   $color_red 	 $color_base03
+client.placeholder      $color_base00 $color_base00 $color_yellow  $color_base00 $color_base00
+client.background       $color_magenta
+
+#for_window [class=".*"] border pixel 2
+
+
+#                    __                    __              __    _           ___            
+#   _______  _______/ /____  ____ ___     / /_____  __  __/ /_  (_)___  ____/ (_)___  ____ _
+#  / ___/ / / / ___/ __/ _ \/ __ `__ \   / //_/ _ \/ / / / __ \/ / __ \/ __  / / __ \/ __ `/
+# (__  ) /_/ (__  ) /_/  __/ / / / / /  / ,< /  __/ /_/ / /_/ / / / / / /_/ / / / / / /_/ / 
+#/____/\__, /____/\__/\___/_/ /_/ /_/  /_/|_|\___/\__, /_.___/_/_/ /_/\__,_/_/_/ /_/\__, /  
+#     /____/                                     /____/                            /____/ 
+
+# Volume keys
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 1%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 1%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Toggle hide for i3bar
+bindsym Control+n bar mode toggle
+
+# i3lock-fancy {https://packages.debian.org/sid/i3lock-fancy}
+bindsym $mod+Escape exec i3lock-fancy
+bindsym $mod+Shift+p exec ~/.config/i3blocks/blocks/shutdown_menu
+
+# toggle tabbed mode
+bindsym $mod+t layout toggle tabbed splith splitv
+bindsym $mod+z layout toggle split h split v
+
+bindsym $alt+Shift+n [class="^.*"] border toggle
+
+#    ____                                            
+#   / __ \_________  ____ __________ _____ ___  _____
+#  / /_/ / ___/ __ \/ __ `/ ___/ __ `/ __ `__ \/ ___/
+# / ____/ /  / /_/ / /_/ / /  / /_/ / / / / / (__  ) 
+#/_/   /_/   \____/\__, /_/   \__,_/_/ /_/ /_/____/  
+#                 /____/                             
+
+# On Startup up
+exec --no-startup-id redshift
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id "compton -b"
+exec --no-startup-id xfce4-clipman
+exec --no-startup-id blueman-applet
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id touchpad-indicator
+exec --no-startup-id xfce4-power-manager
+
+# Floating mode applications
+for_window [class="Arandr"] floating enable
+for_window [class="Blueman"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Gnome-system-monitor"] floating enable, resize set 1000px 700px
+
+# System tools
+bindsym $mod+d exec arandr
+bindsym $mod+s exec pavucontrol
+bindsym $mod+b exec blueman-manager
+bindsym $mod+p exec xfce4-power-manager-settings
+
+# Rofi
+bindsym $alt+space exec rofi -show drun -show-icons
+bindsym $alt+Tab exec rofi -show window -show-icons
+bindsym Shift+$mod+p exec rofi -show power-menu -modi power-menu:rofi-power-menu  -width 20 \
+  -lines 4 \ "power-menu:./rofi-power-menu --confirm=reboot/shutdown"
+
+
+# Code
+bindsym $alt+c exec code
+
+# Nautilus
+bindsym $alt+f exec nautilus
+
+# Google Chrome
+bindsym $alt+g exec google-chrome
+bindsym $alt+Shift+g exec google-chrome --incognito
+
+# Brave
+bindsym $alt+b exec brave-browser
+bindsym $alt+Shift+b exec brave-browser --incognito
+
+# System Monitor 
+bindsym Control+$alt+Delete exec gnome-system-monitor 

@@ -1,0 +1,75 @@
+align=center
+separator=false
+color=#ffffff
+separator_block_width=20
+markup=pango
+
+[cpu_usage]
+command=~/.config/i3blocks/blockets/cpu-usage
+color=#928374
+interval=10
+label= :
+#min_width=CPU: 100.00%
+
+[temperature]
+command=~/.config/i3blocks/blockets/temperature
+color=#fb4934
+label= :
+interval=10
+
+[battery]
+command=~/.config/i3blocks/blockets/battery-poly 1.0 .0%
+color=#b8bb26
+label=:
+interval=5
+
+[backlight]
+command=~/.config/i3blocks/blockets/light
+color=#fbf1c7
+label= :
+interval=1
+
+[wifi]
+command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
+instance=wlp11s0f3u1
+color=#fbf12f
+interval=5
+label= :
+
+
+[home]
+command=df -h /home | awk 'FNR==2{print $4}'
+color=#d3869b
+interval=3
+label= :
+
+
+[memory]
+command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
+color=#8ec07c
+interval=2
+label= :
+
+[volume]
+command=~/.config/i3blocks/blockets/volume
+color=#ebdbb2
+interval=2
+label= :
+
+[microphone]
+command=~/.config/i3blocks/blockets/microphone
+label=
+interval=5
+
+[time]
+command=date '+%T'
+color=#ffb86c
+interval=1
+label=
+
+[date]
+command=date '+%A %d/%m/%Y'
+color=#b8bb26
+interval=60
+label=:
+
